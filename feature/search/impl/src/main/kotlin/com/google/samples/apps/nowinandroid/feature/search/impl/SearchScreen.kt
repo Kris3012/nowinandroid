@@ -451,7 +451,8 @@ private fun SearchToolbar(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier.fillMaxWidth(),
     ) {
-        IconButton(onClick = { onBackClick() }) {
+        IconButton(onClick = { onBackClick() },
+            modifier = Modifier.testTag("searchScreenBackButton")) {
             Icon(
                 imageVector = NiaIcons.ArrowBack,
                 contentDescription = stringResource(
@@ -493,6 +494,7 @@ private fun SearchTextField(
                 contentDescription = stringResource(
                     id = searchR.string.feature_search_api_title,
                 ),
+                modifier = Modifier.testTag("searchScreenIcon"),
                 tint = MaterialTheme.colorScheme.onSurface,
             )
         },

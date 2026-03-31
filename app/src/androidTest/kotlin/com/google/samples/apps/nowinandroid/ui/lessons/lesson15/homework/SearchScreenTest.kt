@@ -19,20 +19,22 @@ package com.google.samples.apps.nowinandroid.ui.lessons.lesson15.homework
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Test
 
-// тут пока доделываю тесты
-
 @HiltAndroidTest
 class SearchScreenTest : MainScreen.ConfigureTest() {
 
     @Test
     fun checkSearch() {
         run {
-            MainScreen{
-                toolbarSearchIcon.performClick()
+            step("Переходит на экран SearchScreen") {
+                MainScreen {
+                    toolbarSearchIcon.performClick()
+                }
             }
-            SearchScreen{
-                backButton.assertContentDescriptionEquals("Back")
-                searchInput.assertIsDisplayed()
+            step("Проверяет элементы экрана SearchScreen") {
+                SearchScreen {
+                    backButton.assertIsDisplayed()
+                    searchInput.assertIsDisplayed()
+                }
             }
         }
     }

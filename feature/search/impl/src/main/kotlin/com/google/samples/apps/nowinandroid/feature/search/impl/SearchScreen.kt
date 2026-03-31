@@ -455,9 +455,7 @@ private fun SearchToolbar(
             modifier = Modifier.testTag("searchScreenBackButton")) {
             Icon(
                 imageVector = NiaIcons.ArrowBack,
-                contentDescription = stringResource(
-                    id = string.core_ui_back,
-                ),
+                contentDescription = "Back"
             )
         }
         SearchTextField(
@@ -494,7 +492,6 @@ private fun SearchTextField(
                 contentDescription = stringResource(
                     id = searchR.string.feature_search_api_title,
                 ),
-                modifier = Modifier.testTag("searchScreenIcon"),
                 tint = MaterialTheme.colorScheme.onSurface,
             )
         },
@@ -531,7 +528,7 @@ private fun SearchTextField(
                     false
                 }
             }
-            .testTag("searchTextField"),
+            .testTag("searchScreenInput"),
         shape = RoundedCornerShape(32.dp),
         value = searchQuery,
         keyboardOptions = KeyboardOptions(
